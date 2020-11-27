@@ -1,21 +1,21 @@
-from libnyumaya import AudioRecognition, FeatureExtractor
+from nyumaya_hotword_plugin.libnyumaya import AudioRecognition, FeatureExtractor
 import time
 from datetime import datetime
-from record import AudiostreamSource
+from nyumaya_hotword_plugin.record import ArecordStream
 
 
 def label_stream(labels, graph, sensitivity):
-    audio_stream = AudiostreamSource()
+    audio_stream = ArecordStream()
 
     extractor = FeatureExtractor()
     extactor_gain = 1.0
 
     detector = AudioRecognition(graph, labels)
-    detector.SetSensitivity(sensitivity)
+    detector.set_sensitivity(sensitivity)
 
-    bufsize = detector.GetInputDataSize()
+    bufsize = detector.get_input_data_size()
 
-    print("Audio Recognition Version: " + detector.GetVersionString())
+    print("Version: " + detector.version)
 
     audio_stream.start()
     try:
@@ -27,11 +27,11 @@ def label_stream(labels, graph, sensitivity):
 
             features = extractor.signal_to_mel(frame, extactor_gain)
 
-            prediction = detector.RunDetection(features)
+            prediction = detector.run_detection(features)
 
             if prediction:
                 now = datetime.now().strftime("%d.%b %Y %H:%M:%S")
-                print(detector.GetPredictionLabel(prediction) + " " + now)
+                print(detector.get_prediction_label(prediction) + " " + now)
 
     except KeyboardInterrupt:
         print("Terminating")
@@ -40,17 +40,22 @@ def label_stream(labels, graph, sensitivity):
 
 if __name__ == '__main__':
     import argparse
+    from os.path import dirname, join
+    default_model = join(dirname(__file__), "nyumaya_hotword_plugin",
+                         "models", "hotwords", "alexa_small_0.3.tflite")
+    default_labels = join(dirname(__file__), "nyumaya_hotword_plugin",
+                         "models", "hotwords", "alexa_labels.txt")
 
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        '--graph', type=str,
-        default='./models/Hotword/alexa_small_0.3.tflite',
+        '--model', type=str,
+        default=default_model,
         help='Model to use for identification.')
 
     parser.add_argument(
         '--labels', type=str,
-        default='./models/Hotword/alexa_labels.txt',
+        default=default_labels,
         help='Path to file containing labels.')
 
     parser.add_argument(
@@ -62,4 +67,4 @@ if __name__ == '__main__':
 
     FLAGS, unparsed = parser.parse_known_args()
 
-    label_stream(FLAGS.labels, FLAGS.graph, FLAGS.sens)
+    label_stream(FLAGS.labels, FLAGS.model, FLAGS.sens)

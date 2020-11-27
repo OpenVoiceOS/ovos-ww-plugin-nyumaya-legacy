@@ -11,11 +11,11 @@ from threading import Lock
 # Reading from the buffer is blocking
 
 
-class RingBuffer():
+class RingBuffer:
 
     def __init__(self, buffer_size=32768):
         self.read_pos = 0
-        self.write_pos = 0
+        self.write_pos = self.write_pos_old = 0
         self.buffer_size = buffer_size
         self.buffer = bytearray(self.buffer_size)
         self.lock = Lock()
@@ -27,7 +27,7 @@ class RingBuffer():
 
         datalen = len(data)
 
-        if (datalen > self.buffer_size):
+        if datalen > self.buffer_size:
             print("Trying to write huge buffer !!!!!!!")
             return
 
@@ -38,7 +38,7 @@ class RingBuffer():
         # Case B: Read pos was bigger than write pos
         self.write_pos_old = self.write_pos
         # Data fitting into remaining buffer
-        if ((self.write_pos + datalen) <= self.buffer_size):
+        if self.write_pos + datalen <= self.buffer_size:
             self.buffer[self.write_pos:self.write_pos + datalen] = data[:]
             self.write_pos += datalen
 
@@ -60,10 +60,10 @@ class RingBuffer():
         return self.buffer_size
 
     def can_read_n_bytes(self, n):
-        if (self.read_pos <= self.write_pos):
-            return n <= (self.write_pos - self.read_pos)
+        if self.read_pos <= self.write_pos:
+            return n <= self.write_pos - self.read_pos
         else:
-            avail = (self.buffer_size - self.read_pos) + self.write_pos
+            avail = self.buffer_size - self.read_pos + self.write_pos
             return n <= avail
 
     def read(self, blocksize, advance):
@@ -76,10 +76,10 @@ class RingBuffer():
             return None
 
         # Can read in one block
-        if ((self.read_pos + blocksize) <= self.buffer_size):
+        if self.read_pos + blocksize <= self.buffer_size:
             data = self.buffer[self.read_pos:self.read_pos + blocksize]
             self.read_pos += advance
-            if (self.read_pos > self.buffer_size):
+            if self.read_pos > self.buffer_size:
                 self.read_pos %= self.buffer_size
 
             self.lock.release()
@@ -89,11 +89,11 @@ class RingBuffer():
         else:
 
             first_part = self.buffer[self.read_pos:self.buffer_size]
-            first_len = (self.buffer_size - self.read_pos)
+            first_len = self.buffer_size - self.read_pos
             second_len = blocksize - first_len
             second_part = self.buffer[0:second_len]
             self.read_pos += advance
-            if (self.read_pos > self.buffer_size):
+            if self.read_pos > self.buffer_size:
                 self.read_pos %= self.buffer_size
 
             data = first_part + second_part

@@ -1,7 +1,7 @@
 import subprocess
 
 from threading import Thread
-from ringbuffer import RingBuffer
+from nyumaya_hotword_plugin.ringbuffer import RingBuffer
 
 
 # Efficienly capture audio into a ringbuffer using arecord
@@ -12,7 +12,7 @@ from ringbuffer import RingBuffer
 # Reading from the buffer is blocking
 
 
-class AudiostreamSource(Thread):
+class ArecordStream(Thread):
 
     def __init__(self, sample_rate=16000, channels=1, audio_length=80):
         Thread.__init__(self)
@@ -23,7 +23,7 @@ class AudiostreamSource(Thread):
         self.sample_rate = sample_rate
         self.channels = channels
         self.audio_length = audio_length
-        self.blocksize = int(((self.sample_rate) * (
+        self.blocksize = int((self.sample_rate * (
             self.audio_length) / 1000) * self.channels * self.bytes_per_sample)
 
         self._cmd = [
@@ -61,6 +61,6 @@ class AudiostreamSource(Thread):
                 self.audio_buffer.write(input_data)
 
         # Shutdown record command
-        if (self._arecord):
+        if self._arecord:
             self._arecord.kill()
             self._arecord = None
