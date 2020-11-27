@@ -22,7 +22,6 @@ def label_stream(labels, graph, sensitivity):
         while True:
             frame = audio_stream.read(bufsize * 2, bufsize * 2)
             if not frame:
-                time.sleep(0.01)
                 continue
 
             features = extractor.signal_to_mel(frame, extactor_gain)
