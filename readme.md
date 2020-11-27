@@ -11,7 +11,7 @@ more info in the [original PR](https://github.com/MycroftAI/mycroft-core/pull/25
 
 ## Install
 
-`mycroft-pip install git+https://github.com/JarbasAl/numaya_hotword`
+`mycroft-pip install mycroft_wake_word_plugin_nyumaya`
 
 ## Configuration
 

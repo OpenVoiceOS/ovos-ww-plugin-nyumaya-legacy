@@ -7,7 +7,7 @@ setup(
     name='mycroft_wake_word_plugin_nyumaya',
     version='0.1',
     description='Nyumaya wake word plugin for mycroft',
-    url='https://github.com/JarbasAl/numaya_hotword',
+    url='https://github.com/OpenJarbas/mycroft_wake_word_plugin_nyumaya',
     author='JarbasAi',
     author_email='jarbasai@mailfence.com',
     license='Apache-2.0',
