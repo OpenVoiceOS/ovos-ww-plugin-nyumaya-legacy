@@ -39,10 +39,11 @@ def label_stream(labels, graph, sensitivity):
 if __name__ == '__main__':
     import argparse
     from os.path import dirname, join
-    default_model = join(dirname(__file__), "nyumaya_hotword_plugin",
-                         "models", "hotwords", "alexa_small_0.3.tflite")
-    default_labels = join(dirname(__file__), "nyumaya_hotword_plugin",
-                         "models", "hotwords", "alexa_labels.txt")
+
+    models_folder = join(dirname(dirname(__file__)), "nyumaya_hotword_plugin",
+                         "models")
+    default_model = join(models_folder, "hotwords", "alexa_small_0.3.tflite")
+    default_labels = join(models_folder, "hotwords", "alexa_labels.txt")
 
     parser = argparse.ArgumentParser()
 

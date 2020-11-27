@@ -48,16 +48,14 @@ def label_stream(models, commands):
 if __name__ == '__main__':
     from os.path import dirname, join
 
-    hotword_graph = join(dirname(__file__), "nyumaya_hotword_plugin",
-                         "models", "hotwords", "marvin_small_0.3.tflite")
-    hotword_labels = join(dirname(__file__), "nyumaya_hotword_plugin",
-                          "models", "hotwords", "marvin_labels.txt")
+    models_folder = join(dirname(dirname(__file__)), "nyumaya_hotword_plugin",
+                         "models")
+    hotword_graph = join(models_folder, "hotwords", "marvin_small_0.3.tflite")
+    hotword_labels = join(models_folder, "hotwords", "marvin_labels.txt")
     hotword_sensitivity = 0.5
 
-    action_graph = join(dirname(__file__), "nyumaya_hotword_plugin",
-                        "models", "commands", "subset_big_0.3.tflite")
-    action_labels = join(dirname(__file__), "nyumaya_hotword_plugin",
-                         "models", "commands", "subset_labels.txt")
+    action_graph = join(models_folder, "commands", "subset_big_0.3.tflite")
+    action_labels = join(models_folder, "commands", "subset_labels.txt")
     action_sensitivity = 0.9
 
     models = [
