@@ -66,3 +66,8 @@ Then select what wakeword to use
  }
  
 ```
+
+
+# Training your own wake word
+
+I could not find instructions to train your own wake-word, I opened an issue [here](https://github.com/nyumaya/nyumaya_audio_recognition/issues/25) requesting instructions
