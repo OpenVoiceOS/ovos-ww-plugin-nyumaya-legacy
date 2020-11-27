@@ -1,4 +1,4 @@
-from nyumaya_hotword_plugin.libnyumaya import NyumayaDetector
+from mycroft_wake_word_plugin_nyumaya.libnyumaya import NyumayaDetector
 
 
 class MultiDetector:

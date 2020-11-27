@@ -90,7 +90,7 @@ class NyumayaDetector:
     def get_prediction_label(self, index):
         if self.labels_list:
             return self.labels_list[index]
-        raise ValueError("Labels not loaded")
+        return "detected!"
 
     def set_sensitivity(self, sens):
         self._lib.SetSensitivity(self.model, sens)

@@ -1,7 +1,7 @@
 import subprocess
 
 from threading import Thread
-from nyumaya_hotword_plugin.ringbuffer import RingBuffer
+from mycroft_wake_word_plugin_nyumaya.ringbuffer import RingBuffer
 
 
 # Efficienly capture audio into a ringbuffer using arecord
