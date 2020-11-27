@@ -28,7 +28,7 @@ def _get_lib():
         raise RuntimeError("Your OS is currently not supported")
 
 
-class AudioRecognition:
+class NyumayaDetector:
     def __init__(self, model, labels=None):
 
         self._lib = cdll.LoadLibrary(_get_lib())

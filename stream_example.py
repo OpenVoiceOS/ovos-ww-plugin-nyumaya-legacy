@@ -1,5 +1,4 @@
-from nyumaya_hotword_plugin.libnyumaya import AudioRecognition, FeatureExtractor
-import time
+from nyumaya_hotword_plugin.libnyumaya import NyumayaDetector, FeatureExtractor
 from datetime import datetime
 from nyumaya_hotword_plugin.record import ArecordStream
 
@@ -10,7 +9,7 @@ def label_stream(labels, graph, sensitivity):
     extractor = FeatureExtractor()
     extactor_gain = 1.0
 
-    detector = AudioRecognition(graph, labels)
+    detector = NyumayaDetector(graph, labels)
     detector.set_sensitivity(sensitivity)
 
     bufsize = detector.get_input_data_size()

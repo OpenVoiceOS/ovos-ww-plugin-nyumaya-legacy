@@ -1,4 +1,4 @@
-from nyumaya_hotword_plugin.libnyumaya import AudioRecognition
+from nyumaya_hotword_plugin.libnyumaya import NyumayaDetector
 
 
 class MultiDetector:
@@ -68,7 +68,7 @@ class MultiDetector:
         self.update_word_and_detector()
 
     def add_detector(self, graph, labels, sensitivity):
-        detector = AudioRecognition(graph, labels)
+        detector = NyumayaDetector(graph, labels)
         detector.set_sensitivity(sensitivity)
         self.detectors.append(detector)
 
