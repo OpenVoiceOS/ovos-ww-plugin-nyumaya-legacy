@@ -3,11 +3,9 @@ Mycroft wake word plugin for [Nyumaya](https://github.com/nyumaya)
 
 ![](./model_accuracy/cpu_usage.png)
 
-The "plugins" are pip install-able modules presenting one or more entrypoints with a entrypoint group defined in setup.py
+The "plugins" are pip install-able modules that provide new engines for mycroft
 
-Wake-word group: "mycroft.plugin.wake_word"
-
-more info in the [original PR](https://github.com/MycroftAI/mycroft-core/pull/2594)
+more info in the [docs](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/mycroft-core/plugins)
 
 ## Install
 
