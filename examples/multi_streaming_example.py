@@ -1,6 +1,6 @@
-from mycroft_wake_word_plugin_nyumaya.libnyumaya import FeatureExtractor
-from mycroft_wake_word_plugin_nyumaya.record import ArecordStream
-from mycroft_wake_word_plugin_nyumaya.multi_detector import MultiDetector
+from jarbas_wake_word_plugin_nyumaya.libnyumaya import FeatureExtractor
+from jarbas_wake_word_plugin_nyumaya.record import ArecordStream
+from jarbas_wake_word_plugin_nyumaya.multi_detector import MultiDetector
 
 
 def light_on():
@@ -48,7 +48,7 @@ def label_stream(models, commands):
 if __name__ == '__main__':
     from os.path import dirname, join
 
-    models_folder = join(dirname(dirname(__file__)), "mycroft_wake_word_plugin_nyumaya",
+    models_folder = join(dirname(dirname(__file__)), "jarbas_wake_word_plugin_nyumaya",
                          "models")
     hotword_graph = join(models_folder, "hotwords", "marvin_small_0.3.tflite")
     hotword_labels = join(models_folder, "hotwords", "marvin_labels.txt")

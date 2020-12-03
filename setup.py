@@ -2,16 +2,16 @@
 from setuptools import setup
 
 
-PLUGIN_ENTRY_POINT = 'nyumaya_ww_plug=mycroft_wake_word_plugin_nyumaya:NyumayaWakeWordPlugin'
+PLUGIN_ENTRY_POINT = 'nyumaya_ww_plug=jarbas_wake_word_plugin_nyumaya:NyumayaWakeWordPlugin'
 setup(
-    name='mycroft_wake_word_plugin_nyumaya',
+    name='jarbas-wake-word-plugin-nyumaya',
     version='0.1',
     description='Nyumaya wake word plugin for mycroft',
-    url='https://github.com/OpenJarbas/mycroft_wake_word_plugin_nyumaya',
+    url='https://github.com/JarbasLingua/jarbas-wake-word-plugin-nyumaya',
     author='JarbasAi',
     author_email='jarbasai@mailfence.com',
     license='Apache-2.0',
-    packages=['mycroft_wake_word_plugin_nyumaya'],
+    packages=['jarbas_wake_word_plugin_nyumaya'],
     include_package_data=True,
     zip_safe=True,
     classifiers=[

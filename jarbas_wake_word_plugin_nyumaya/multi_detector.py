@@ -1,4 +1,4 @@
-from mycroft_wake_word_plugin_nyumaya.libnyumaya import NyumayaDetector
+from jarbas_wake_word_plugin_nyumaya.libnyumaya import NyumayaDetector
 
 
 class MultiDetector:

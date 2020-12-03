@@ -12,7 +12,7 @@
 #
 from os.path import dirname, join, exists
 from mycroft.client.speech.hotword_factory import HotWordEngine
-from mycroft_wake_word_plugin_nyumaya.libnyumaya import NyumayaDetector, FeatureExtractor
+from jarbas_wake_word_plugin_nyumaya.libnyumaya import NyumayaDetector, FeatureExtractor
 
 
 class NyumayaWakeWordPlugin(HotWordEngine):

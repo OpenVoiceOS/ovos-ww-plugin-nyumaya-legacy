@@ -1,6 +1,6 @@
-from mycroft_wake_word_plugin_nyumaya.libnyumaya import NyumayaDetector, FeatureExtractor
+from jarbas_wake_word_plugin_nyumaya.libnyumaya import NyumayaDetector, FeatureExtractor
 from datetime import datetime
-from mycroft_wake_word_plugin_nyumaya.record import ArecordStream
+from jarbas_wake_word_plugin_nyumaya.record import ArecordStream
 
 
 def label_stream(labels, graph, sensitivity):
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     import argparse
     from os.path import dirname, join
 
-    models_folder = join(dirname(dirname(__file__)), "mycroft_wake_word_plugin_nyumaya",
+    models_folder = join(dirname(dirname(__file__)), "jarbas_wake_word_plugin_nyumaya",
                          "models")
     default_model = join(models_folder, "hotwords", "alexa_small_0.3.tflite")
     default_labels = join(models_folder, "hotwords", "alexa_labels.txt")
