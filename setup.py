@@ -5,7 +5,7 @@ from setuptools import setup
 PLUGIN_ENTRY_POINT = 'ovos_ww_plugin_nyumaya_legacy=ovos_ww_plugin_nyumaya_legacy:NyumayaWakeWordPlugin'
 setup(
     name='ovos_ww_plugin_nyumaya_legacy',
-    version='0.1',
+    version='0.0.1',
     description='Nyumaya wake word plugin for mycroft',
     url='https://github.com/OpenVoiceOS/ovos-ww-plugin-nyumaya-legacy',
     author='JarbasAi',
@@ -13,6 +13,7 @@ setup(
     license='Apache-2.0',
     packages=['ovos_ww_plugin_nyumaya_legacy'],
     include_package_data=True,
+    install_requires=["ovos-plugin-manager>=0.0.1a7"],
     zip_safe=True,
     classifiers=[
         'Development Status :: 3 - Alpha',
