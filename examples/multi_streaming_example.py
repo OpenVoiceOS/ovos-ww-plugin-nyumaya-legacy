@@ -48,7 +48,7 @@ def label_stream(models, commands):
 if __name__ == '__main__':
     from os.path import dirname, join
 
-    models_folder = join(dirname(dirname(__file__)), "jarbas_wake_word_plugin_nyumaya",
+    models_folder = join(dirname(dirname(__file__)), "ovos_ww_plugin_nyumaya_legacy",
                          "models")
     hotword_graph = join(models_folder, "hotwords", "marvin_small_0.3.tflite")
     hotword_labels = join(models_folder, "hotwords", "marvin_labels.txt")

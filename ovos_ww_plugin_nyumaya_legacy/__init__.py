@@ -11,8 +11,8 @@
 # limitations under the License.
 #
 from os.path import dirname, join, exists
-from mycroft.client.speech.hotword_factory import HotWordEngine
-from jarbas_wake_word_plugin_nyumaya.libnyumaya import NyumayaDetector, FeatureExtractor
+from ovos_plugin_manager.templates.hotwords import HotWordEngine
+from ovos_ww_plugin_nyumaya_legacy.libnyumaya import NyumayaDetector, FeatureExtractor
 
 
 class NyumayaWakeWordPlugin(HotWordEngine):

@@ -1,4 +1,4 @@
-from jarbas_wake_word_plugin_nyumaya.libnyumaya import NyumayaDetector
+from ovos_ww_plugin_nyumaya_legacy.libnyumaya import NyumayaDetector
 
 
 class MultiDetector:

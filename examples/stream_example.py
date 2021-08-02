@@ -40,7 +40,7 @@ if __name__ == '__main__':
     import argparse
     from os.path import dirname, join
 
-    models_folder = join(dirname(dirname(__file__)), "jarbas_wake_word_plugin_nyumaya",
+    models_folder = join(dirname(dirname(__file__)), "ovos_ww_plugin_nyumaya_legacy",
                          "models")
     default_model = join(models_folder, "hotwords", "alexa_small_0.3.tflite")
     default_labels = join(models_folder, "hotwords", "alexa_labels.txt")

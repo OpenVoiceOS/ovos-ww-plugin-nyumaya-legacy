@@ -2,16 +2,16 @@
 from setuptools import setup
 
 
-PLUGIN_ENTRY_POINT = 'nyumaya_ww_plug=jarbas_wake_word_plugin_nyumaya:NyumayaWakeWordPlugin'
+PLUGIN_ENTRY_POINT = 'ovos_ww_plugin_nyumaya_legacy=ovos_ww_plugin_nyumaya_legacy:NyumayaWakeWordPlugin'
 setup(
-    name='jarbas-wake-word-plugin-nyumaya',
+    name='ovos_ww_plugin_nyumaya_legacy',
     version='0.1',
     description='Nyumaya wake word plugin for mycroft',
-    url='https://github.com/JarbasLingua/jarbas-wake-word-plugin-nyumaya',
+    url='https://github.com/OpenVoiceOS/ovos-ww-plugin-nyumaya-legacy',
     author='JarbasAi',
     author_email='jarbasai@mailfence.com',
     license='Apache-2.0',
-    packages=['jarbas_wake_word_plugin_nyumaya'],
+    packages=['ovos_ww_plugin_nyumaya_legacy'],
     include_package_data=True,
     zip_safe=True,
     classifiers=[
@@ -31,6 +31,6 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    keywords='mycroft plugin wake word',
+    keywords='mycroft ovos plugin wake word',
     entry_points={'mycroft.plugin.wake_word': PLUGIN_ENTRY_POINT}
 )

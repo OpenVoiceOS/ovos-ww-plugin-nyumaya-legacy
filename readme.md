@@ -3,13 +3,9 @@ Mycroft wake word plugin for [Nyumaya](https://github.com/nyumaya)
 
 ![](./model_accuracy/cpu_usage.png)
 
-The "plugins" are pip install-able modules that provide new engines for mycroft
-
-more info in the [docs](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/mycroft-core/plugins)
-
 ## Install
 
-`mycroft-pip install jarbas-wake-word-plugin-nyumaya`
+`pip install ovos_ww_plugin_nyumaya_legacy`
 
 ## Configuration
 
@@ -18,37 +14,37 @@ Add the following to your hotwords section in mycroft.conf
 ```json
   "hotwords": {
     "alexa": {
-        "module": "nyumaya_ww_plug",
+        "module": "ovos_ww_plugin_nyumaya_legacy",
         "model": "alexa",
         "sensitivity": 0.5,
         "extractor_gain": 1.0
     },
     "alexa_big": {
-        "module": "nyumaya_ww_plug",
+        "module": "ovos_ww_plugin_nyumaya_legacy",
         "model": "alexa_big",
         "sensitivity": 0.5,
         "extractor_gain": 1.0
     },
     "marvin": {
-        "module": "nyumaya_ww_plug",
+        "module": "ovos_ww_plugin_nyumaya_legacy",
         "model": "marvin",
         "sensitivity": 0.5,
         "extractor_gain": 1.0
     },
     "marvin_big": {
-        "module": "nyumaya_ww_plug",
+        "module": "ovos_ww_plugin_nyumaya_legacy",
         "model": "marvin_big",
         "sensitivity": 0.5,
         "extractor_gain": 1.0
     },
     "sheila": {
-        "module": "nyumaya_ww_plug",
+        "module": "ovos_ww_plugin_nyumaya_legacy",
         "model": "sheila",
         "sensitivity": 0.5,
         "extractor_gain": 1.0
     },
      "sheila_big": {
-        "module": "nyumaya_ww_plug",
+        "module": "ovos_ww_plugin_nyumaya_legacy",
         "model": "sheila_big",
         "sensitivity": 0.5,
         "extractor_gain": 1.0
