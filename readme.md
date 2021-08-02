@@ -1,6 +1,10 @@
 ## Description
 Mycroft wake word plugin for [Nyumaya](https://github.com/nyumaya)
 
+DEPRECATED - you probably want [the latest](https://github.com/OpenVoiceOS/ovos-ww-plugin-nyumaya)
+
+This uses the old [0.3.X nyumaya binaries](https://github.com/nyumaya/nyumaya_audio_recognition/tree/V0.3)
+
 ![](./model_accuracy/cpu_usage.png)
 
 ## Install
